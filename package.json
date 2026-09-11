@@ -15,5 +15,8 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "surfs_up": "."
+  }
 }
