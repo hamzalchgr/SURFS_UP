@@ -25,3 +25,12 @@ export const reservationSchema = z.object({
       .max(1000, { message: 'Note is too long.' })
       .optional(),
 });
+
+
+export const idSchema = z.object({
+   reservation_id: z.coerce.number({
+      message: "Reservation ID must be a valid number"
+   })
+   .int("Reservation ID must be an integer")
+   .positive("Reservation ID must be a positive number")
+});
