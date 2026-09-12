@@ -35,22 +35,22 @@
 --    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 -- );
 
-CREATE TABLE IF NOT EXISTS reservations (
-   reservation_id SERIAL PRIMARY KEY,
+-- CREATE TABLE IF NOT EXISTS reservations (
+--    reservation_id SERIAL PRIMARY KEY,
 
-   room_id INT REFERENCES camp_rooms(room_id) ON DELETE CASCADE,
-   camper_id INT REFERENCES campers(camper_id) ON DELETE CASCADE,
+--    room_id INT REFERENCES camp_rooms(room_id) ON DELETE CASCADE,
+--    camper_id INT REFERENCES campers(camper_id) ON DELETE CASCADE,
 
-   status VARCHAR(50) NOT NULL DEFAULT 'pending',
-   amount_due NUMERIC(6, 2) NOT NULL,
+--    status VARCHAR(50) NOT NULL DEFAULT 'pending',
+--    amount_due NUMERIC(6, 2) NOT NULL,
 
-   note VARCHAR(1000),
-   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+--    note VARCHAR(1000),
+--    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-   CONSTRAINT chk_status CHECK (
-      status IN ('Pending', 'Confirmed', 'Cancelled')
-   )
-);
+--    CONSTRAINT chk_status CHECK (
+--       status IN ('Pending', 'Confirmed', 'Cancelled')
+--    )
+-- );
 
 -- INSERT INTO camps (
 --    start_date,
