@@ -1,9 +1,11 @@
+import Camp from "./Sections/Camp";
 import Hero from "./Sections/Hero";
 
 const Home = () => {
    return (
-      <div className="">
+      <div>
          <Hero />
+         <Camp />
       </div>
    );
 };

@@ -14,11 +14,11 @@ const Header = () => {
    const [menuOpen, setMenuOpen] = useState(false);
 
    return (
-      <header className='fixed top-0 left-0 w-full'>
+      <header className=''>
          <div
             className={clsx(
-               menuOpen && 'fixed z-50 top-0 w-full',
-               'flex items-center justify-between px-5 md:px-7 py-4 font-anton text-lg text-[#666143]'
+               menuOpen ? ' text-[#666143]' : 'text-[#ffee7d]',
+               'flex items-center justify-between px-5 md:px-7 py-4 font-anton text-lg absolute z-50 top-0 w-full'
             )}
          >
             {/* LOGO */}
