@@ -6,6 +6,12 @@
 }
 
 
+@layer base {
+   body {
+      @apply font-inter
+   }
+}
+
 @layer components {
    .header-nav-list {
       @apply fixed top-0 left-0 h-screen w-screen bg-[#ffee7d] px-5 md:px-7  font-anton uppercase text-[34px] md:text-[52px] lg:text-[68px] font-normal flex justify-center flex-col gap-1.5 text-[#666143];

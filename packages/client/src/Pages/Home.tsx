@@ -1,7 +1,9 @@
+import Hero from "./Sections/Hero";
+
 const Home = () => {
    return (
-      <div className="text-blue-600 scroll-smooth">
-         
+      <div className="">
+         <Hero />
       </div>
    );
 };

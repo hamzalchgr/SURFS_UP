@@ -11,10 +11,10 @@ const navLinks = [
 ];
 
 const Header = () => {
-   const [menuOpen, setMenuOpen] = useState(true);
+   const [menuOpen, setMenuOpen] = useState(false);
 
    return (
-      <header>
+      <header className='fixed top-0 left-0 w-full'>
          <div
             className={clsx(
                menuOpen && 'fixed z-50 top-0 w-full',
