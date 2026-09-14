@@ -14,45 +14,45 @@ const Header = () => {
    const [menuOpen, setMenuOpen] = useState(false);
 
    return (
-      <header className=''>
+      <header>
          <div
             className={clsx(
                menuOpen ? ' text-[#666143]' : 'text-[#ffee7d]',
-               'flex items-center justify-between px-5 md:px-7 py-4 font-anton text-lg absolute z-50 top-0 w-full'
+               'header__bar'
             )}
          >
             {/* LOGO */}
             <div></div>
 
             {/* BOOKING & MENU */}
-            <div className="flex items-center gap-5 uppercase">
+            <div className="header__actions">
                <Link to="/reservations">Bookings</Link>
                <button
                   aria-controls="nav-menu"
                   aria-label="Toggle navigation menu"
                   aria-expanded={menuOpen}
                   onClick={() => setMenuOpen(!menuOpen)}
-                  className='cursor-pointer uppercase'
+                  className='uppercase'
                >
                   {menuOpen ? 'close' : 'menu'}
                </button>
             </div>
          </div>
          <nav
-            id="nav-menu"
+            id="nav__menu"
             aria-hidden={!menuOpen}
             className={clsx(
-               'transition-all ease-in-out duration-150',
+               'nav__menu',
                menuOpen
-                  ? 'opacity-100 visible pointer-events-auto'
-                  : 'opacity-0 invisible pointer-events-none'
+                  ? 'nav__menu__open'
+                  : 'nav__menu__close'
             )}
          >
-            <ul className="header-nav-list">
+            <ul className="nav__list">
                {navLinks.map(({ href, label }, index) => (
                   <li className="" key={label}>
                      <a href={href}>
-                        <span className="text-xs w-8.5 font-medium font-inter">
+                        <span className="link__index">
                            0{index + 1}
                         </span>
                         <span>{label}</span>

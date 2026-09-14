@@ -1,27 +1,29 @@
 const Hero = () => {
    return (
-      <section className="relative">
-         <div className="h-screen w-full overflow-hidden">
+      <section className="hero">
             <img
-               className="h-full w-full object-center object-cover"
+               className="hero__img"
                src="https://framerusercontent.com/images/sVEgiTuWY22mpqqBUHhJV1hPhw.png?width=2752&height=1536"
                alt=""
+               loading="eager"
+               fetchPriority="high"
             />
-         </div>
 
-         <div className="absolute w-full h-screen top-0 left-0 flex flex-col items-center justify-center gap-5 bg-[#12111180]">
-            <div className="pb-5 flex flex-col items-center justify-center">
-               <p className="text-white uppercase font-semibold text-sm">Surf camp · Canggu, Bali</p>
-               <h1 className="text-[68px] md:text-[100px] lg:text-[160px] font-bold text-[#ffee7d] leading-none">
+         <div className="hero__overlay" />
+
+         <div className="hero__content">
+            <div className="hero__copy">
+               <span className="">Surf camp · Canggu, Bali</span>
+               <h1 className="hero__title">
                   SURF'S UP
                </h1>
-               <p className="font-anton text-[#f4f3eee0] text-lg lg:text-[41px] text-center max-w-[400px] leading-none">
+               <p className="">
                   TWO WEEKS. ONE ISLAND. ENDLESS WAVES.
                </p>
             </div>
 
             <a
-               className="bg-[#666143] px-6 py-3.5 rounded-full leading-none text-white font-medium"
+               className="hero__cta"
                href="#booking"
             >
                Reserve your spot

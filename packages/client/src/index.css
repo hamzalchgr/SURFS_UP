@@ -5,22 +5,182 @@
    --font-inter: 'Inter', sans-serif;
 }
 
-
 @layer base {
    body {
-      @apply font-inter bg-amber-50
+      @apply font-inter bg-amber-50;
+   }
+
+   button {
+      @apply cursor-pointer;
    }
 }
 
 @layer components {
-   .header-nav-list {
-      @apply fixed z-40 top-0 left-0 h-screen w-screen bg-[#ffee7d] px-5 md:px-7 font-anton uppercase text-[34px] md:text-[52px] lg:text-[68px] font-normal flex justify-center flex-col gap-1.5 text-[#666143];
+   /* HEADER  */
+   .header__bar {
+      @apply flex items-center justify-between px-5 md:px-7 py-4 font-anton text-lg absolute z-50 top-0 w-full;
 
-      & a {
-         @apply flex items-center gap-6 leading-none
+      & .header__actions {
+         @apply flex items-center gap-5 uppercase;
       }
    }
 
+   & .nav__menu {
+      @apply transition-all ease-in-out duration-150;
+
+      & .nav__list {
+         @apply fixed z-40 top-0 left-0 h-screen w-screen bg-[#ffee7d] px-5 md:px-7 font-anton uppercase text-[34px] md:text-[52px] lg:text-[68px] font-normal flex justify-center flex-col gap-1.5 text-[#666143];
+
+         & a {
+            @apply flex items-center gap-6 leading-none;
+
+            & .link__index {
+               @apply text-xs w-8.5 font-medium font-inter;
+            }
+         }
+      }
+   }
+
+   & .nav__menu__open {
+      @apply opacity-100 visible pointer-events-auto;
+   }
+   & .nav__menu__close {
+      @apply opacity-0 invisible pointer-events-none;
+   }
+
+   /* ________ HERO __________ */
+   .hero {
+      @apply relative min-h-screen;
+
+      & .hero__img {
+         @apply h-full w-full absolute inset-0 -z-20 object-cover object-center;
+      }
+
+      & .hero__overlay {
+         @apply absolute inset-0 -z-10 bg-[#12111180];
+      }
+
+      & .hero__content {
+         @apply absolute w-full h-screen top-0 left-0 flex flex-col items-center justify-center gap-5 px-5;
+      }
+
+      & .hero__copy {
+         @apply pb-5 flex flex-col items-center justify-center;
+
+         & span {
+            @apply text-white uppercase font-semibold text-sm;
+         }
+
+         & .hero__title {
+            @apply text-[68px] md:text-[100px] lg:text-[160px] font-bold text-[#ffee7d] leading-none;
+         }
+
+         & p {
+            @apply font-anton text-[#f4f3eee0] text-lg lg:text-[41px] text-center max-w-[400px] leading-none;
+         }
+      }
+
+      & .hero__cta {
+         @apply bg-[#666143] px-6 py-3.5 rounded-full leading-none text-white font-medium;
+      }
+   }
+
+   /* ______ CAMP _______ */
+   .camp {
+      @apply px-5 md:px-7 lg:px-25 py-25 lg:py-35 flex flex-col gap-25;
+
+      & .camp__intro {
+         @apply flex flex-col gap-5 text-[#666143];
+      }
+
+      & .camp__eyebrow {
+         @apply uppercase font-medium text-sm;
+      }
+
+      & .camp__content {
+         @apply flex flex-col gap-11;
+
+         & .camp__overview {
+            @apply flex flex-col gap-5;
+
+            & .camp__heading {
+               @apply flex flex-col gap-5 text-[#666143];
+            }
+
+            & .camp__desc {
+               @apply text-[#777a73] max-w-[350px] font-medium text-[17px];
+            }
+
+            & .camp__link {
+               @apply flex items-center gap-3 font-medium;
+
+               & .camp__link-icon {
+                  @apply h-11 w-11 rounded-full grid place-items-center bg-[#ffee7d] hover:bg-[#666143] hover:text-white;
+               }
+            }
+         }
+
+         & .camp__grid {
+            @apply grid md:grid-cols-2 lg:grid-cols-3 gap-5;
+
+            & .grid__card__details {
+               @apply p-7.5 h-[280px] bg-[#666143] flex flex-col justify-center rounded-[28px] font-medium text-white;
+
+               & div {
+                  @apply flex items-center justify-between py-4;
+               }
+            }
+
+            & .grid__card__img {
+               @apply block md:hidden lg:block rounded-[28px] overflow-hidden;
+
+               & img {
+                  @apply h-full w-full object-center object-cover;
+               }
+            }
+
+            & .grid__card__community {
+               @apply p-7.5 h-[280px] bg-[#666143] flex flex-col rounded-[28px] justify-between;
+
+               & div {
+                  @apply px-4 py-2 text-sm leading-none rounded-full bg-[#ffee7d] w-fit text-[#666143] font-medium;
+               }
+
+               & p {
+                  @apply text-[22px] font-medium text-white leading-normal;
+               }
+            }
+         }
+      }
+
+      & .camp__include {
+         @apply flex flex-col gap-[36px] lg:gap-[56px];
+
+         & .camp__heading {
+            @apply flex flex-col gap-5 text-[#666143];
+         }
+
+         & .camp__include__grid {
+            @apply grid gap-5  md:grid-cols-2 xl:grid-cols-4;
+
+            & .include__card {
+               @apply h-[300px] w-full rounded-[28px] overflow-hidden bg-[#ecede7];
+
+               & img {
+                  @apply h-full w-full object-center object-cover;
+               }
+
+               & span {
+                  @apply text-sm py-2 px-4 bg-[#666143] rounded-full absolute bottom-5 left-5 text-white font-medium;
+               }
+
+               & .card__icon {
+                  @apply h-11 w-11 rounded-full grid place-items-center bg-[#b8dde5] text-[#666143];
+               }
+            }
+         }
+      }
+   }
 
    .heading-2 {
       @apply font-anton text-[#666143] text-[30px] md:text-[46px] lg:text-[75px] leading-none uppercase;

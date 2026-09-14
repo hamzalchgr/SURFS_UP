@@ -1,73 +1,159 @@
-import { ArrowUpRight } from 'lucide-react';
+import { AlarmClock, ArrowUpRight, Bus, Compass, Home } from 'lucide-react';
 
 const Camp = () => {
    return (
-      <section className="px-5 md:px-7 lg:px-25 pb-25 lg:pb-35">
-         <div className="py-25 lg:py-35 flex flex-col gap-5 text-[#666143]">
-            <p className="uppercase font-medium text-sm">
-               What you’re signing up for
-            </p>
+      <section className="camp">
+         <div className="camp__intro">
+            <p className="camp__eyebrow">What you’re signing up for</p>
             <h2 className="heading-2">
                We teach surfing. The new friends, missed sunsets, and
                spontaneous road trips come naturally.
             </h2>
          </div>
 
-         <div className="flex flex-col gap-11">
-            <div className="flex flex-col gap-5">
-               <div className="flex flex-col gap-5 text-[#666143]">
-                  <p className="uppercase font-medium text-sm">overview</p>
+         <div className="camp__content">
+            <div className="camp__overview">
+               <div className="camp__heading">
+                  <p className="camp__eyebrow">overview</p>
                   <h2 className="heading-2">MORE THAN A SURF TRIP</h2>
                </div>
 
-               <p className="text-[#777a73] max-w-[350px] font-medium text-[17px]">
+               <p className="camp__desc">
                   Wake up near the ocean, surf with local coaches, explore the
                   island and come home with a new group of friends.
                </p>
 
-               <a href="#camp" className="flex items-center gap-3 font-medium">
+               <a href="#camp" className="camp__link">
                   <span>Discover the camp</span>
-                  <span className="h-11 w-11 rounded-full grid place-items-center bg-[#ffee7d] hover:bg-[#666143] hover:text-white">
+                  <span className="camp__link-icon">
                      <ArrowUpRight size={18} />
                   </span>
                </a>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-               <div className="p-7.5 h-[280px] bg-[#666143] flex flex-col justify-center rounded-[28px] font-medium text-white">
-                  <div className="flex items-center justify-between py-4">
+            <div className="camp__grid">
+               <div className="grid__card__details">
+                  <div>
                      <p>Where</p>
                      <p>Canggu, Bali</p>
                   </div>
-                  <div className="flex items-center justify-between py-4">
+                  <div>
                      <p>When</p>
                      <p>12 – 26 October 2026</p>
                   </div>
-                  <div className="flex items-center justify-between py-4">
+                  <div>
                      <p>Duration</p>
                      <p>14 days</p>
                   </div>
-                  <div className="flex items-center justify-between py-4">
+                  <div>
                      <p>Group</p>
                      <p>Up to 18 people</p>
                   </div>
                </div>
 
-               <div className="block md:hidden lg:block rounded-[28px] overflow-hidden">
+               <div className="grid__card__img">
                   <img
-                     className="h-full w-full object-center object-cover"
                      src="https://framerusercontent.com/images/bNKFJSYow2UpTekbZuKSUAo8iKk.png?width=1200&height=750"
                      alt=""
+                     loading="eager"
                   />
                </div>
 
-               <div className="p-7.5 h-[280px] bg-[#666143] flex flex-col rounded-[28px] justify-between">
-                  <div className='px-4 py-2 text-sm leading-none rounded-full bg-[#ffee7d] w-fit text-[#666143] font-medium'>Community</div>
-                  <p className='text-[22px] font-medium text-white leading-normal'>
+               <div className="grid__card__community">
+                  <div>Community</div>
+                  <p>
                      Half the group books the next camp before this one ends.
                   </p>
                </div>
             </div>
+         </div>
+
+         <div className="camp__include">
+            <div className="camp__heading">
+               <p className="camp__eyebrow">what's included</p>
+               <h2 className="heading-2">
+                  EVERYTHING YOU NEED FOR TWO UNFORGETTABLE WEEKS
+               </h2>
+            </div>
+
+            <ul className="camp__include__grid">
+               <li className="include__card relative md:col-span-2">
+                  <img
+                     src="https://framerusercontent.com/images/56u73cTlewCcKNRyZyM3TX4TlY.png?scale-down-to=2048&width=2752&height=1536"
+                     alt=""
+                     loading="eager"
+                  />
+
+                  <span>Daily surf coaching</span>
+               </li>
+
+               <li className="include__card flex flex-col justify-between p-8">
+                  <div className="card__icon">
+                     <Home size={20} />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                     <p className="text-[19px] font-semibold text-[#20221f]">
+                        Villa accommodation
+                     </p>
+                     <p className="text-[#666666]">
+                        A modern tropical villa five minutes from the beach,
+                        pool included.
+                     </p>
+                  </div>
+               </li>
+
+               <li className="include__card flex flex-col justify-between p-8">
+                  <div className="card__icon">
+                     <AlarmClock size={20} />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                     <p className="text-[19px] font-semibold text-[#20221f]">
+                        Breakfast every morning
+                     </p>
+                     <p className="text-[#666666]">
+                        Smoothie bowls, eggs and proper coffee before or after the session.
+                     </p>
+                  </div>
+               </li>
+
+               <li className="include__card flex flex-col justify-between p-8">
+                  <div className="card__icon">
+                     <Bus size={20} />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                     <p className="text-[19px] font-semibold text-[#20221f]">
+                        Equipment & transfers
+                     </p>
+                     <p className="text-[#666666]">
+                        Boards, leashes, rash guards and every ride to the breaks.
+                     </p>
+                  </div>
+               </li>
+
+               <li className="include__card flex flex-col justify-between p-8 bg-[#ffee7d]">
+                  <div className="card__icon bg-white">
+                     <Compass size={20} />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                     <p className="text-[19px] font-semibold text-[#20221f]">
+                        Island experiences
+                     </p>
+                     <p className="text-[#666666]">
+                        Waterfalls, temples and a volcano sunrise, three trips included.
+                     </p>
+                  </div>
+               </li>
+
+               <li className="include__card relative md:col-span-2">
+                  <img
+                     src="https://framerusercontent.com/images/gAwDNfKJYsvZYE7J0sfWt8Kco.png?width=1200&height=820"
+                     alt=""
+                     loading="eager"
+                  />
+
+                  <span>Photo & video sessions</span>
+               </li>
+            </ul>
          </div>
       </section>
    );
